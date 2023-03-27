@@ -58,14 +58,7 @@ one_case.sample = list(generate_tem(num_samples = whole_size,
                                     noise_var = 0.5))
 
 a_values, b_values, c_values = generate_abc(interval=1)
-loss_all = [[[0 for _ in range(len(a_values))] for _ in range(len(b_values))] for _ in range(c_values)]
-repeat = 10
-max_repeat = len(a_values) * len(b_values) * len(c_values)
 
-while repeat > 0 and max_repeat > 0:
-    a = random.choice(a_values)
-    b = random.choice(b_values)
-    c = random.choice(c_values)
 
 
 for a, b, c in itertools.product(a_values, b_values, c_values):
