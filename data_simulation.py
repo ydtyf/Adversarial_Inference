@@ -7,8 +7,9 @@ def generate_simu(x_min, x_max, para, num_samples, the_seed = 7):
     p1 = para['1']
     p2 = para['2']
 
+    # different distribution from the generation
+    the_seed += 1
     # Set the number of samples and the range of x values
-    # Generate a set of x values using numpy's linspace function
     x_values = np.random.uniform(low=x_min, high=x_max, size=num_samples)
 
     # Evaluate the function at each x value using numpy's vectorized operations

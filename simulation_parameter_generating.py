@@ -1,14 +1,12 @@
 import numpy as np
 
-def generate_abc(interval = 1):
+def generate_abc(parameter):
     # Set the range of values for a, b, and c, and the interval size
-    min_val = -5
-    max_val = 5
 
     # Generate a list of values for a, b, and c within the specified range and interval
-    a_values = np.arange(0, 5 + interval, interval)
-    b_values = np.arange(0, 0 + interval, interval)
-    c_values = np.arange(0, 5 + interval, interval)
+    a_values = np.arange(parameter['0'][0], parameter['0'][1] + parameter['0'][2], parameter['0'][2])
+    b_values = np.arange(parameter['1'][0], parameter['1'][1] + parameter['1'][2], parameter['1'][2])
+    c_values = np.arange(parameter['2'][0], parameter['2'][1] + parameter['2'][2], parameter['2'][2])
 
     # Return the lists of values as a tuple
     return (a_values, b_values, c_values)
