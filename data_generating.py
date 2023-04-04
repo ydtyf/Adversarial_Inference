@@ -12,7 +12,7 @@ def generate_tem(simu_para: simu_data, noise_var = 1):
     x_values = np.random.uniform(low=simu_para.x_min, high=simu_para.x_max, size=simu_para.num_samples)
 
     # Evaluate the function at each x value using numpy's vectorized operations
-    y_values = p2 * x_values ** 2 + 0 * p1 + p0
+    y_values = p2 * x_values ** 2 + x_values * p1 + p0
     noise = np.random.normal(0, noise_var, simu_para.num_samples)
     y_values += noise
     data = [list(pair) for pair in zip(x_values, y_values)]
@@ -29,7 +29,7 @@ def generate_temxy(simu_para: simu_data, noise_var = 1):
     x_values = np.random.uniform(low=simu_para.x_min, high=simu_para.x_max, size=simu_para.num_samples)
 
     # Evaluate the function at each x value using numpy's vectorized operations
-    y_values = p2 * x_values ** 2 + 0 * p1 + p0
+    y_values = p2 * x_values ** 2 + x_values * p1 + p0
     noise = np.random.normal(0, noise_var, simu_para.num_samples)
     y_values += noise
 

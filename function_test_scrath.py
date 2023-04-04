@@ -5,13 +5,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from data_model import simu_data
+
+# 使用DeepLearning来生成对sample的近似，然后根据RMSE来确定最优的parameter值，这个版本是全计算，没有优化
 class value_compare:
     sampley = []
     samplex = []
     simulationx = []
     simulationy = []
     minimal = {}
-    least_loss = float('-inf')
+    least_loss = float('inf')
     best_simulation = []
     epochs = 0
 
@@ -47,7 +49,7 @@ class value_compare:
         loss = np.sum(np.square(np.subtract(y_pred, y_real)))
         # loss = tf.keras.losses.mean_squared_error(y_real, y_pred).numpy()
 
-        if loss > self.least_loss:
+        if loss < self.least_loss:
             self.minimal = para
             self.least_loss = loss
             self.best_simulation = self.simulationy

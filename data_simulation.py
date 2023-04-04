@@ -13,7 +13,7 @@ def generate_simu(x_min, x_max, para, num_samples, the_seed = 7):
     x_values = np.random.uniform(low=x_min, high=x_max, size=num_samples)
 
     # Evaluate the function at each x value using numpy's vectorized operations
-    y_values = p2 * x_values ** 2 + 0 * p1 + p0
+    y_values = p2 * x_values ** 2 + x_values * p1 + p0
     noise = np.random.normal(0, 2, num_samples)
     data = [list(pair) for pair in zip(x_values, y_values)]
 
