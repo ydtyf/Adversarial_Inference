@@ -38,8 +38,6 @@ class value_compare:
             tf.keras.layers.Dense(1, activation='sigmoid')
         ])
 
-
-
         indices = np.arange(len(x_data))
         np.random.shuffle(indices)
         x_shuffled = x_data[indices]
